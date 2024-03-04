@@ -88,9 +88,9 @@ export default new class {
             viteOptions.vite.server.watch.ignored.push(`**/${options.output}/*.html`)
         }
 
-        lodash.merge(options, viteOptions)
+        lodash.merge(viteOptions, options)
 
-        this.options = options
+        this.options = viteOptions
 
         return new Promise(async resolve => {
             // defines server instance in the Serve class
